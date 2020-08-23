@@ -1,10 +1,10 @@
 import time
-import typing as tp
+from typing import Union
 
 __all__ = ['time_ms', 'time_us', 'time_spent_from']
 
 
-def time_ms(as_float: bool = False) -> tp.Union[int, float]:
+def time_ms(as_float: bool = False) -> Union[int, float]:
     """Convert current time to milliseconds.
 
     :param as_float: result should be float, default result is int
@@ -16,7 +16,7 @@ def time_ms(as_float: bool = False) -> tp.Union[int, float]:
     return _time_ms
 
 
-def time_us(as_float: bool = False) -> tp.Union[int, float]:
+def time_us(as_float: bool = False) -> Union[int, float]:
     """Convert current time to microseconds.
 
     Base on the time.time() instead the time.time_ns() for backward
