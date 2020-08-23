@@ -12,4 +12,4 @@ pip install cornsnipps
 Cornsnipps supports Python 3.5+.
 
 ## Features
-Here will be a list of the "magic" thing implemented by this library
+Here will be a list of the "magic" things implemented by this library
