@@ -1,7 +1,7 @@
 from unittest import TestCase
 from unittest import mock
 
-from cornsnipps.time import time_ms, time_us
+from cornsnipps.time import time_ms, time_us, time_spent_from
 
 current_time = 13.37
 
@@ -30,3 +30,7 @@ class TestTime(TestCase):
         _time_us = time_us(True)
         self.assertEqual(_current_time_us, _time_us)
         self.assertIsInstance(_time_us, float)
+
+    @mock.patch('time.time', return_value=current_time + 11.1)
+    def test_time_spent_from(self, mock_time):
+        self.assertAlmostEqual(11.1, time_spent_from(current_time))

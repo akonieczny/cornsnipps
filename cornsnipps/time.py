@@ -1,7 +1,7 @@
 import time
 import typing as tp
 
-__all__ = ['time_ms', 'time_us']
+__all__ = ['time_ms', 'time_us', 'time_spent_from']
 
 
 def time_ms(as_float: bool = False) -> tp.Union[int, float]:
@@ -29,3 +29,17 @@ def time_us(as_float: bool = False) -> tp.Union[int, float]:
     if not as_float:
         return int(_time_us)
     return _time_us
+
+
+def time_spent_from(start_time: float) -> float:
+    """Calculate time spent from start_time to now
+
+    Example:
+    >>> start_time = time.time()
+    >>> ...
+    >>> time_spent = time_spent_from(start_time)
+
+    :param start_time: time in seconds since the epoch
+    :return: time spent from start_time to now
+    """
+    return time.time() - start_time
